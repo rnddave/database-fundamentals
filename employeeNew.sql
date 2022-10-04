@@ -25,3 +25,17 @@ SELECT name, salary, salary*0.21 AS Tax from EmployeeNew
 -- 3. Name, Salary, Tax, Net Salary 
 
 SELECT name, salary AS 'Gross Salary', salary*0.21 AS Tax, salary*0.79 AS 'Net Salary' from EmployeeNew
+
+-- NEW WORK 2022-10-04
+
+-- we're going to give our staff a 10% payrise
+
+UPDATE EmployeeNew set salary = salary+salary*0.1
+
+-- we only want to give the IT folks a payrise this time 
+
+UPDATE EmployeeNew set salary = salary+salary*0.03 where Department = 'IT'
+
+-- maybe a payrise to only bottom earners 
+
+update EmployeeNew set salary = salary+salary*0.09 where salary < 65000
