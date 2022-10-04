@@ -39,3 +39,11 @@ UPDATE EmployeeNew set salary = salary+salary*0.03 where Department = 'IT'
 -- maybe a payrise to only bottom earners 
 
 update EmployeeNew set salary = salary+salary*0.09 where salary < 65000
+
+-- let's see if we can find staff by department
+
+select * from EmployeeNew WHERE Department = 'Royalty' and salary > 500000
+
+-- now we want to find 3 conditions (Dept, salary, location)
+
+select * from EmployeeNew WHERE Department = 'Royalty' and salary > 500000 AND address = 'London, UK'
