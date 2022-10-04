@@ -24,4 +24,4 @@ SELECT name, salary, salary*0.21 AS Tax from Employee
 
 -- 3. Name, Salary, Tax, Net Salary 
 
-SELECT name, salary AS Gross Salary, salary*0.21 AS Tax, Salary*0.79 AS Net Salary
+SELECT name, salary AS 'Gross Salary', salary*0.21 AS Tax, salary*0.79 AS 'Net Salary' from Employee
