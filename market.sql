@@ -10,3 +10,8 @@ insert into market values('pepsi', 500, 137, 0.38, 0.65),
 -- we want to see any products with less than 5 left in stock
 
 select product, qty_Purchased-qty_Sold AS 'Stock' from market WHERE qty_Purchased-qty_Sold <5
+
+-- now we want to find the profit for items sold
+-- price sold - price purchased
+
+select product, qty_Sold AS 'Items Sold', (price_sold-price_purchased)*qty_Sold AS 'profit' from market
