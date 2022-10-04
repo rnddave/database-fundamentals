@@ -19,3 +19,11 @@ SELECT name from schools WHERE marks*100/150>80
 -- we want to view only the students with a score greater than 60% (we didn't have any students higher)
 
 SELECT name from schools WHERE marks*100/150>60
+
+-- now we want to try changing data in an existing table. 
+
+UPDATE schools set name = 'James' WHERE name is 'Paul' and regNo is 000028
+
+-- now we want to change the marks for a student
+
+UPDATE schools set marks = 104 WHERE regNo is 28
