@@ -47,3 +47,21 @@ select * from EmployeeNew WHERE Department = 'Royalty' and salary > 500000
 -- now we want to find 3 conditions (Dept, salary, location)
 
 select * from EmployeeNew WHERE Department = 'Royalty' and salary > 500000 AND address = 'London, UK'
+
+-- I want to update the departments to make multiple hits on various search
+
+CREATE TABLE EmployeeTwo(EmpNo int(4), Name char(20), Department char(20), Salary numeric(8,2), Address char(40))
+
+-- populate the table 
+INSERT into EmployeeTwo values(1001, 'Shafeeq', 'IT', 63000.00, 'London, UK'),
+(1001, 'Peter', 'HR', 35000.00, 'London, UK'),
+(2054, 'David', 'IT', 65000.00, 'London, UK'),
+(3001, 'The King', 'C-Suite', 98000.00, 'London, UK'),
+(3004, 'Harry', 'C-Suite', 58000.00, 'Somewhere, US'),
+(1024, 'Puppy Face', 'Accounts', 87500.00, 'Moscow, RU'),
+(4096, 'Kwarteng', 'Accounts', 49000.00, 'London, UK'),
+(8112, 'Major Tom', 'HR', 53000.00, 'Huston, US')
+
+-- more complicated search, [(X AND Y) AND (W OR Z)]
+
+select * from EmployeeTwo where (salary > 38000 and salary <= 75000) and (department = 'HR' OR 'IT')
