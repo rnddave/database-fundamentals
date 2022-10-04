@@ -11,3 +11,11 @@ INSERT into Schools values(000027, 'Peter', 089),
 select * FROM Schools
 
 select name,marks*100/150 As Percentage from Schools
+
+-- we want to view only the students with a score greater than 80%
+
+SELECT name from schools WHERE marks*100/150>80
+
+-- we want to view only the students with a score greater than 60% (we didn't have any students higher)
+
+SELECT name from schools WHERE marks*100/150>60
