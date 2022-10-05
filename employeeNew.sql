@@ -78,3 +78,6 @@ select * from EmployeeTwo where salary=(select max(salary) from EmployeeTwo)
 -- now we only want to see name using subquery 
 
 SELECT name, salary FROM EmployeeTwo WHERE max = (SELECT max(salary) FROM EmployeeTwo)
+
+-- can we find highest salary for the  persons in IT dept (below query did not work) 
+SELECT name, salary FROM EmployeeTwo WHERE max = (SELECT max(salary) FROM EmployeeTwo) and department is 'IT'
