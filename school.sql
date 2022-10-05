@@ -27,3 +27,15 @@ UPDATE schools set name = 'James' WHERE name is 'Paul' and regNo is 000028
 -- now we want to change the marks for a student
 
 UPDATE schools set marks = 104 WHERE regNo is 28
+
+-- add a column
+
+alter table schools add address char(40)
+
+-- add data to the new column
+
+update table schools set address = 'London' where regNo is 28 
+
+-- drop a column
+
+alter table schools drop address
