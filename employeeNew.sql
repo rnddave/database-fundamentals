@@ -65,3 +65,16 @@ INSERT into EmployeeTwo values(1001, 'Shafeeq', 'IT', 63000.00, 'London, UK'),
 -- more complicated search, [(X AND Y) AND (W OR Z)]
 
 select * from EmployeeTwo where (salary > 38000 and salary <= 75000) and (department = 'HR' OR 'IT')
+
+-- who has highest salary? 
+
+SELECT name,max(salary) from EmployeeTwo
+
+-- alternative, using subquery 
+-- we can use this concept of subqueries to solve very complex problems 
+
+select * from EmployeeTwo where salary=(select max(salary) from EmployeeTwo)
+
+-- now we only want to see name using subquery 
+
+SELECT name, salary FROM EmployeeTwo WHERE max = (SELECT max(salary) FROM EmployeeTwo)
