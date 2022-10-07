@@ -36,4 +36,18 @@ select name, max(totalmarks) from studentRecords
 
 select studentid, name, max(totalmarks) from studentRecords 
 
+select studentid, name, max(totalmarks) from studentRecords where totalMarks<(select max(totalMarks) from studentRecords)
+
+select studentid, name, max(totalmarks) -- expect 3rd place
+	from studentRecords 
+    where totalMarks<(
+      select max(totalMarks) AS 'silver'
+      	from studentRecords 
+      	where totalMarks<(
+          select max(totalMarks) AS 'bronze' 
+          	from studentRecords))
+
+-- given up temporarily and asked for help on discord
+
+
 
