@@ -94,3 +94,28 @@ select studentid, name, totalmarks --expect 3rd place
 
 -- this produced the 1st place rank but nothing extra. 
 
+-----------------------------
+
+-- returning to rank
+
+select 
+	*
+    from (
+      SELECT
+          studentid, name, totalmarks,
+          DENSE_RANK() OVER (
+              ORDER BY totalmarks DESC
+          ) As Rank 
+      FROM
+          studentRecords
+      ) studentRecords
+      
+      where Rank <= 3
+
+---------- THIS ^^ IS THE ANSWER -----------
+
+
+
+
+
+
