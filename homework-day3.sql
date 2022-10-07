@@ -23,3 +23,17 @@ insert into studentRecords values(1024, 'Bobby Orange', 320),
 -- now we want to award a medal for each of the 3 best scores
 
 select max(totalmarks) from studentRecords where totalmarks <(select max(totalmarks) from studentRecords where totalmarks < (select max(totalmarks) from studentRecords))
+
+-- my first attempt only produce the thrid highest score and nothing else
+
+select max(totalmarks) from studentRecords where totalmarks <(select max(totalmarks) from studentRecords)
+
+-- only showing the second highest score, nothing else (and only one of them) 
+
+-- this shows me the highest score 
+
+select name, max(totalmarks) from studentRecords
+
+select studentid, name, max(totalmarks) from studentRecords 
+
+
