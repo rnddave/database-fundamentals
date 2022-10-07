@@ -49,5 +49,48 @@ select studentid, name, max(totalmarks) -- expect 3rd place
 
 -- given up temporarily and asked for help on discord
 
+-- this one gives me 3 scores, but does not account for second place being a tie, in this case I would expect 3 scores
+SELECT 
+    studentid, name, totalmarks
+FROM studentRecords
+ORDER BY totalMarks DESC
+LIMIT 3 distinct;
 
+-- could try a join (THIS DOESN'@'T WORK - JUST GIVES ME TOP SCORE AGAIN)
+
+SELECT 
+    medal.studentid, medal.name, medal.totalmarks
+FROM studentRecords medal
+LEFT JOIN studentRecords sorted ON medal.totalMarks < sorted.totalMarks
+WHERE sorted.studentID IS NULL;
+
+-- this doesn't work as well
+
+select studentid, name, totalmarks from studentRecords ORDER by totalMarks DESC limit 3
+
+-- lets try the rank 
+
+select studentid, name, totalmarks, dense_rank() over(order by totalMarks DESC) as rank from studentRecords
+
+-- ABOVE shows whole database sorted by rank
+
+select studentid, name, totalmarks, dense_rank() over(order by totalMarks DESC ) as rank from studentRecords 
+
+select studentid, name, totalmarks, dense_rank() over(order by totalMarks DESC ) as rank from studentRecords  where rank <=3
+
+
+----------------------
+
+-- Shafeeq suggested: 
+
+select studentid, name, totalmarks --expect 3rd place 
+    from studentRecords 
+    where totalMarks>(
+      select max(totalMarks) -- expect 2nd place
+          from studentRecords 
+          where totalMarks<(
+          select max(totalMarks) -- expect 1st place
+              from studentRecords))
+
+-- this produced the 1st place rank but nothing extra. 
 
