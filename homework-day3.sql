@@ -22,4 +22,4 @@ insert into studentRecords values(1024, 'Bobby Orange', 320),
 
 -- now we want to award a medal for each of the 3 best scores
 
-select max(marks) from schools where marks <(select max(marks) from schools where marks < (select max(marks) from schools))
+select max(totalmarks) from studentRecords where totalmarks <(select max(totalmarks) from studentRecords where totalmarks < (select max(totalmarks) from studentRecords))
