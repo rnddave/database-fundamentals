@@ -5,4 +5,4 @@
 - Constantly creating more new data 
 - Data creation is increasing exponentially (data capture, data storage) 
 
-# 
+
