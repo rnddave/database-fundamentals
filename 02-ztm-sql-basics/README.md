@@ -19,4 +19,10 @@ For the early part of the course, we'll be looking at the [DBFiddle](https://www
 
 - [quiz](https://www.jetpunk.com/user-quizzes/1336712/sql-starter-quiz)
 
+### Exercise - Relational Model Quiz
 
+- [Quiz](https://www.jetpunk.com/user-quizzes/1336712/the-relational-model)
+
+# Our First Database
+
+I'm using **data.zip** as the source data within this repo
