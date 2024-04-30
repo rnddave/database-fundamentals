@@ -59,6 +59,51 @@ The collection of multiple rows of data = **The Cardinality**
 
 --- 
 
+# SQL Command Buckets
 
+- DDL
+- DQL
+- DML
+- DCL
+
+## DDL
+
+- Data Definition Language
+- Broad statements
+- Used when setting up the database etc
+- Change things etc
+- CREATE
+- ALTER
+- DROP
+- RENAME
+- TRUNCATE
+- COMMENT
+
+## DQL
+
+- Data Query Language
+- Once a database is in place, most of your work is looking at data
+- SELECT
+
+## DML
+
+- Data Modification Language
+- data in the tables 
+- DDL = Database Definitions, making changes to databases
+- whereas DML = about the tables inside the database
+- INSERT
+- UPDATE
+- DELETE
+- MERGE
+- CALL
+- EXPLAIN PLAIN
+- LOCK TABLE
+
+## DCL
+
+- Data Control Language
+- Giving and revoking access
+- GRANT
+- REVOKE
 
 
