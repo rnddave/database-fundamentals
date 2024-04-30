@@ -19,6 +19,7 @@ For the early part of the course, we'll be looking at the [DBFiddle](https://www
 
 - [quiz](https://www.jetpunk.com/user-quizzes/1336712/sql-starter-quiz)
 
+<<<<<<< HEAD
 ### Exercise - Relational Model Quiz
 
 - [Quiz](https://www.jetpunk.com/user-quizzes/1336712/the-relational-model)
@@ -26,3 +27,6 @@ For the early part of the course, we'll be looking at the [DBFiddle](https://www
 # Our First Database
 
 I'm using **data.zip** as the source data within this repo
+=======
+
+>>>>>>> ca0bb9f24d56999026099afd863df4047923292f
