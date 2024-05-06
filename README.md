@@ -106,4 +106,6 @@ The collection of multiple rows of data = **The Cardinality**
 - GRANT
 - REVOKE
 
+---
+
 
